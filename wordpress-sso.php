@@ -3,7 +3,7 @@
  * Plugin Name: Wordpress SSO
  * Plugin URI: https://webbedrijf.nl
  * Description: Wordpress SSO via link
- * Version: 1.0.1
+ * Version: 1.0
  * Author: Webbedrijf.nl
  * Author URI: https://webbedrijf.nl
  * License: GPL2
