@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '43f716c43e8834ea9c8201f24032c4d0c03c9d3e',
+        'reference' => '4464ac870f1cfb83dcd276d3fe05ed2f36844d7c',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '43f716c43e8834ea9c8201f24032c4d0c03c9d3e',
+            'reference' => '4464ac870f1cfb83dcd276d3fe05ed2f36844d7c',
             'dev_requirement' => false,
         ),
         'guzzlehttp/guzzle' => array(

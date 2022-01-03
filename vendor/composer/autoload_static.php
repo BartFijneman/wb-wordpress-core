@@ -16,7 +16,7 @@ class ComposerStaticInit5dddfbfd372763f1b9fec3d7bf958909
     public static $prefixLengthsPsr4 = array (
         'W' => 
         array (
-            'WordpressSSO\\' => 13,
+            'WbWordpressSso\\' => 15,
         ),
         'P' => 
         array (
@@ -32,7 +32,7 @@ class ComposerStaticInit5dddfbfd372763f1b9fec3d7bf958909
     );
 
     public static $prefixDirsPsr4 = array (
-        'WordpressSSO\\' => 
+        'WbWordpressSso\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
         ),
