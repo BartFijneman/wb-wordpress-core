@@ -1,3 +1,3 @@
 # Wordpress SSO
 
-This plugin is developed by Webbedrijf.nl for customers to automatically login to there Wordpress websites. 
+This plugin is developed to automatically register and login on Wordpress websites. 
