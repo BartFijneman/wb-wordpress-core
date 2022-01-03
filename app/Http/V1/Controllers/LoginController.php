@@ -52,18 +52,19 @@ class LoginController
                 'user_pass' => $this->generateRandomString(12),
                 'user_email' => $request->get_param('email'),
                 'first_name' => $request->get_param('first_name'),
-                'last_name' => $request->get_param('last_name')
+                'last_name' => $request->get_param('last_name'),
+                'role' => $request->get_param('role')
             ]);
         }
         else {
             $userId = $user->ID;
         }
 
-        $token = $userId.$this->generateRandomString(32);
+        $token = $userId . $this->generateRandomString(32);
 
         $url = home_url() . '/wp-json/webbedrijf-sso/v1/login?token=' . $token;
 
-        set_transient($token, $userId, 600);
+        set_transient($token, $userId, 60);
 
         $response = new \WP_REST_Response( $request );
         $response->set_data(['url' => $url]);
@@ -84,7 +85,14 @@ class LoginController
             return $response;
         }
 
-        var_dump(get_transient($request->get_param('token')));
+        $userId = get_transient($request->get_param('token'));
+
+        wp_clear_auth_cookie();
+        wp_set_current_user ( $userId );
+        wp_set_auth_cookie  ( $userId );
+
+        $redirect_to = user_admin_url();
+        wp_safe_redirect( $redirect_to );
     }
 
 
