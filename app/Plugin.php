@@ -1,8 +1,8 @@
 <?php
 
-namespace WebbedrijfSSO;
+namespace WbWordpressSso;
 
-use WebbedrijfSSO\Http\V1\Controllers\LoginController;
+use WbWordpressSso\Http\V1\Controllers\LoginController;
 
 
 class Plugin {

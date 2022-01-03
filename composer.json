@@ -1,7 +1,7 @@
 {
   "autoload": {
     "psr-4": {
-      "WebbedrijfSSO\\": "app/"
+      "WbWordpressSso\\": "app/"
     }
   },
   "require": {

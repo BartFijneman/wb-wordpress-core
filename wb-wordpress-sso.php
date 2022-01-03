@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: Wordpress SSO
+ * Plugin Name: Webbedrijf SSO
  * Plugin URI: https://webbedrijf.nl
- * Description: Wordpress SSO via link
+ * Description: Webbedrijf SSO via portal
  * Version: 1.0
  * Author: Webbedrijf.nl
  * Author URI: https://webbedrijf.nl
@@ -11,7 +11,7 @@
 
 require plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
 
-new WebbedrijfSSO\Plugin();
+new WbWordpressSso\Plugin();
 
 
 /*
@@ -23,10 +23,10 @@ if (is_admin()) {
     $config = array(
         'slug' => plugin_basename(__FILE__),
         'proper_folder_name' => 'wordpress-sso',
-        'api_url' => 'https://api.github.com/repos/BartFijneman/wordpress-sso',
-        'raw_url' => 'https://raw.github.com/BartFijneman/wordpress-sso/master',
-        'github_url' => 'https://github.com/BartFijneman/wordpress-sso',
-        'zip_url' => 'https://github.com/BartFijneman/wordpress-sso/zipball/master',
+        'api_url' => 'https://api.github.com/repos/BartFijneman/wb-wordpress-sso',
+        'raw_url' => 'https://raw.github.com/BartFijneman/wb-wordpress-sso/master',
+        'github_url' => 'https://github.com/BartFijneman/wb-wordpress-sso',
+        'zip_url' => 'https://github.com/BartFijneman/wb-wordpress-sso/zipball/master',
         'sslverify' => true,
         'requires' => '3.0',
         'tested' => '3.3',

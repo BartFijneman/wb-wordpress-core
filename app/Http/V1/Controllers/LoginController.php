@@ -1,6 +1,6 @@
 <?php
 
-namespace WebbedrijfSSO\Http\V1\Controllers;
+namespace WbWordpressSso\Http\V1\Controllers;
 
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
@@ -12,14 +12,14 @@ class LoginController
     public function register()
     {
         add_action( 'rest_api_init', function () {
-            register_rest_route( 'webbedrijf-sso/v1', '/create-link', [
+            register_rest_route( 'wb-wordpress-sso/v1', '/create-link', [
                 'methods' => 'POST',
                 'callback' => [$this, 'createLink'],
             ] );
         } );
 
         add_action( 'rest_api_init', function () {
-            register_rest_route( 'webbedrijf-sso/v1', '/login', [
+            register_rest_route( 'wb-wordpress-sso/v1', '/login', [
                 'methods' => 'GET',
                 'callback' => [$this, 'login'],
             ] );
@@ -62,7 +62,7 @@ class LoginController
 
         $token = $userId . $this->generateRandomString(32);
 
-        $url = home_url() . '/wp-json/webbedrijf-sso/v1/login?token=' . $token;
+        $url = home_url() . '/wp-json/wb-wordpress-sso/v1/login?token=' . $token;
 
         set_transient($token, $userId, 60);
 
@@ -98,7 +98,7 @@ class LoginController
 
     private function authenticate($request) {
 
-        if($request->get_header('token') !== WEBBEDRIJF_SSO_TOKEN) {
+        if($request->get_header('token') !== WB_WORDPRESS_SSO_TOKEN) {
             $response = new \WP_REST_Response( $request );
             $response->set_data(['error' => 'Token invalid.']);
             $response->set_status( 403 );
