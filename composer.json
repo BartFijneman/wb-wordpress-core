@@ -1,0 +1,10 @@
+{
+  "autoload": {
+    "psr-4": {
+      "WebbedrijfSSO\\": "app/"
+    }
+  },
+  "require": {
+    "guzzlehttp/guzzle": "7.4"
+  }
+}
