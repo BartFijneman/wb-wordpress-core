@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: Webbedrijf SSO
+ * Plugin Name: Wordpress SSO
  * Plugin URI: https://webbedrijf.nl
- * Description: Webbedrijf portal Wordpress SSO
- * Version: 1.0
+ * Description: Wordpress SSO via link
+ * Version: 1.0.1
  * Author: Webbedrijf.nl
  * Author URI: https://webbedrijf.nl
  * License: GPL2
@@ -22,7 +22,7 @@ include_once('updater.php');
 if (is_admin()) {
     $config = array(
         'slug' => plugin_basename(__FILE__),
-        'proper_folder_name' => 'webbedrijf-wordpress-sso',
+        'proper_folder_name' => 'wordpress-sso',
         'api_url' => 'https://api.github.com/repos/BartFijneman/wordpress-sso',
         'raw_url' => 'https://raw.github.com/BartFijneman/wordpress-sso/master',
         'github_url' => 'https://github.com/BartFijneman/wordpress-sso',
