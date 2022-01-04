@@ -103,8 +103,7 @@ class LoginController
         wp_set_current_user ( $userId );
         wp_set_auth_cookie  ( $userId );
 
-        $redirect_to = user_admin_url();
-        wp_redirect( $redirect_to );
+        wp_redirect( '/wp-admin' );
     }
 
 
