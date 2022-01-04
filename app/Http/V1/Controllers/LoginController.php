@@ -53,8 +53,12 @@ class LoginController
                 'user_email' => $request->get_param('email'),
                 'first_name' => $request->get_param('first_name'),
                 'last_name' => $request->get_param('last_name'),
+                'display_name' => $request->get_param('first_name') . ' ' . strtoupper(substr($request->get_param('last_name'), 0, 1)) . '.',
+                'nickname' => $request->get_param('first_name') . ' ' . $request->get_param('last_name'),
                 'role' => $request->get_param('role')
             ]);
+
+            add_user_meta($userId, 'wpseo_noindex_author', 'on', true);
         }
         else {
             $userId = $user->ID;
