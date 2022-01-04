@@ -1,0 +1,12 @@
+{
+	"name": "Webbedrijf SSO",
+	"version": "1.0.6",
+	"download_url": "https://github.com/BartFijneman/wb-wordpress-sso/archive/master.zip",
+
+	"author": "Webbedrijf.nl",
+	"author_homepage": "https://webbedrijf.nl",
+
+	"sections": {
+		"description": "Webbedrijf SSO via portal"
+	},
+}
