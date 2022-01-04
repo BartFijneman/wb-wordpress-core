@@ -36,7 +36,6 @@ class LoginController
          */
         if($request->get_param('email') == '' ||
             $request->get_param('first_name') == '' ||
-            $request->get_param('last_name') == '' ||
             $request->get_param('role') == '') {
 
             $response = new \WP_REST_Response( $request );
@@ -53,8 +52,8 @@ class LoginController
                 'user_email' => $request->get_param('email'),
                 'first_name' => $request->get_param('first_name'),
                 'last_name' => $request->get_param('last_name'),
-                'display_name' => $request->get_param('first_name') . ' ' . $request->get_param('last_name'),
-                'nickname' => $request->get_param('first_name') . ' ' . $request->get_param('last_name'),
+                'display_name' => $request->get_param('first_name') . ($request->get_param('last_name') != '' ? ' ' . $request->get_param('last_name') : ''),
+                'nickname' => $request->get_param('first_name') . ($request->get_param('last_name') != '' ? ' ' . $request->get_param('last_name') : ''),
                 'role' => $request->get_param('role')
             ]);
 
