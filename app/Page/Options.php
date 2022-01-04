@@ -1,6 +1,6 @@
 <?php
 
-namespace WbWordpressSso\Page;
+namespace WbWordpressCore\Page;
 
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;

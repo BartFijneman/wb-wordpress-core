@@ -1,6 +1,6 @@
 <?php
 
-namespace WbWordpressSso\Http\V1\Controllers;
+namespace WbWordpressCore\Http\V1\Controllers;
 
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
@@ -12,14 +12,14 @@ class LoginController
     public static function register()
     {
         add_action( 'rest_api_init', function () {
-            register_rest_route( 'wb-wordpress-sso/v1', '/create-link', [
+            register_rest_route( 'wb-wordpress-core/v1', '/create-login-link', [
                 'methods' => 'POST',
                 'callback' => [new self, 'createLink'],
             ] );
         } );
 
         add_action( 'rest_api_init', function () {
-            register_rest_route( 'wb-wordpress-sso/v1', '/login', [
+            register_rest_route( 'wb-wordpress-core/v1', '/login', [
                 'methods' => 'GET',
                 'callback' => [new self, 'login'],
             ] );
@@ -66,10 +66,10 @@ class LoginController
         $token = $userId . $this->generateRandomString(32);
 
         if ( get_option('permalink_structure') ) {
-            $url = home_url() . '/wp-json/wb-wordpress-sso/v1/login?token=' . $token;
+            $url = home_url() . '/wp-json/wb-wordpress-core/v1/login?token=' . $token;
         }
         else {
-            $url = home_url() . '?rest_route=/wb-wordpress-sso/v1/login&token=' . $token;
+            $url = home_url() . '?rest_route=/wb-wordpress-core/v1/login&token=' . $token;
         }
 
         set_transient($token, $userId, 60);

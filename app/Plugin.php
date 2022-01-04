@@ -1,11 +1,11 @@
 <?php
 
-namespace WbWordpressSso;
+namespace WbWordpressCore;
 
 use Carbon_Fields\Carbon_Fields;
-use WbWordpressSso\Http\V1\Controllers\LoginController;
-use WbWordpressSso\Login\Login;
-use WbWordpressSso\Page\Options;
+use WbWordpressCore\Http\V1\Controllers\LoginController;
+use WbWordpressCore\Login\Login;
+use WbWordpressCore\Page\Options;
 
 
 class Plugin {
