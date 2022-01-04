@@ -3,7 +3,7 @@
  * Plugin Name: Webbedrijf SSO
  * Plugin URI: https://webbedrijf.nl
  * Description: Webbedrijf SSO via portal
- * Version: 1.0.5
+ * Version: 1.0.6
  * Author: Webbedrijf.nl
  * Author URI: https://webbedrijf.nl
  * License: GPL2
