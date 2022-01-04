@@ -66,7 +66,7 @@ class LoginController
             $url = home_url() . '/wp-json/wb-wordpress-sso/v1/login?token=' . $token;
         }
         else {
-            $url = home_url() . '?rest_route=/wb-wordpress-sso/v1/login?token=' . $token;
+            $url = home_url() . '?rest_route=/wb-wordpress-sso/v1/login&token=' . $token;
         }
 
         set_transient($token, $userId, 60);
