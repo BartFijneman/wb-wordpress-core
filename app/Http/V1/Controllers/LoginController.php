@@ -92,6 +92,13 @@ class LoginController
 
         $userId = get_transient($request->get_param('token'));
 
+        if($userId == '') {
+            $response = new \WP_REST_Response( $request );
+            $response->set_data(['error' => 'Invalid data.']);
+            $response->set_status( 422 );
+            return $response;
+        }
+
         wp_clear_auth_cookie();
         wp_set_current_user ( $userId );
         wp_set_auth_cookie  ( $userId );
