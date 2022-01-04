@@ -62,7 +62,12 @@ class LoginController
 
         $token = $userId . $this->generateRandomString(32);
 
-        $url = home_url() . '/wp-json/wb-wordpress-sso/v1/login?token=' . $token;
+        if ( get_option('permalink_structure') ) {
+            $url = home_url() . '/wp-json/wb-wordpress-sso/v1/login?token=' . $token;
+        }
+        else {
+            $url = home_url() . '?rest_route=/wb-wordpress-sso/v1/login?token=' . $token;
+        }
 
         set_transient($token, $userId, 60);
 
