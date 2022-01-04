@@ -29,6 +29,10 @@ class ComposerStaticInit5dddfbfd372763f1b9fec3d7bf958909
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
         ),
+        'C' => 
+        array (
+            'Carbon_Fields\\' => 14,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -56,6 +60,10 @@ class ComposerStaticInit5dddfbfd372763f1b9fec3d7bf958909
         'GuzzleHttp\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
+        ),
+        'Carbon_Fields\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/htmlburger/carbon-fields/core',
         ),
     );
 

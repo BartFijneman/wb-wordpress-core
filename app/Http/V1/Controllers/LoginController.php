@@ -9,19 +9,19 @@ use Carbon_Fields\Field;
 class LoginController
 {
 
-    public function register()
+    public static function register()
     {
         add_action( 'rest_api_init', function () {
             register_rest_route( 'wb-wordpress-sso/v1', '/create-link', [
                 'methods' => 'POST',
-                'callback' => [$this, 'createLink'],
+                'callback' => [new self, 'createLink'],
             ] );
         } );
 
         add_action( 'rest_api_init', function () {
             register_rest_route( 'wb-wordpress-sso/v1', '/login', [
                 'methods' => 'GET',
-                'callback' => [$this, 'login'],
+                'callback' => [new self, 'login'],
             ] );
         } );
     }

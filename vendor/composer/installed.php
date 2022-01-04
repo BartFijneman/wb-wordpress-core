@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '4464ac870f1cfb83dcd276d3fe05ed2f36844d7c',
+        'reference' => '85581f5dd4274131f3e908786ff8ff4d84ddc43b',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '4464ac870f1cfb83dcd276d3fe05ed2f36844d7c',
+            'reference' => '85581f5dd4274131f3e908786ff8ff4d84ddc43b',
             'dev_requirement' => false,
         ),
         'guzzlehttp/guzzle' => array(
@@ -44,6 +44,15 @@
             'install_path' => __DIR__ . '/../guzzlehttp/psr7',
             'aliases' => array(),
             'reference' => '089edd38f5b8abba6cb01567c2a8aaa47cec4c72',
+            'dev_requirement' => false,
+        ),
+        'htmlburger/carbon-fields' => array(
+            'pretty_version' => 'v3.3.2',
+            'version' => '3.3.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../htmlburger/carbon-fields',
+            'aliases' => array(),
+            'reference' => 'dd5663e14c6db365323b688dbae1cfbeaf14bee7',
             'dev_requirement' => false,
         ),
         'psr/http-client' => array(

@@ -3,7 +3,7 @@
  * Plugin Name: Webbedrijf SSO
  * Plugin URI: https://github.com/BartFijneman/wb-wordpress-sso
  * Description: Webbedrijf SSO via portal
- * Version: 1.0.8
+ * Version: 1.0.9
  * Author: Webbedrijf.nl
  * Author URI: https://webbedrijf.nl
  * License: GPL2
@@ -24,5 +24,4 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
     'wb-wordpress-sso'
 );
 
-//Optional: Set the branch that contains the stable release.
 $myUpdateChecker->setBranch('master');
