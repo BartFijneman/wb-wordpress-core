@@ -22,7 +22,7 @@ include_once('updater.php');
 if (is_admin()) {
     $config = array(
         'slug' => plugin_basename(__FILE__),
-        'proper_folder_name' => 'wp-wordpress-sso',
+        'proper_folder_name' => 'wb-wordpress-sso',
         'api_url' => 'https://api.github.com/repos/BartFijneman/wb-wordpress-sso',
         'raw_url' => 'https://raw.github.com/BartFijneman/wb-wordpress-sso/master',
         'github_url' => 'https://github.com/BartFijneman/wb-wordpress-sso',
