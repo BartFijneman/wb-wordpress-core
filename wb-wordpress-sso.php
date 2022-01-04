@@ -3,7 +3,7 @@
  * Plugin Name: Webbedrijf SSO
  * Plugin URI: https://github.com/BartFijneman/wb-wordpress-sso
  * Description: Webbedrijf SSO via portal
- * Version: 1.0.10
+ * Version: 1.0.11
  * Author: Webbedrijf.nl
  * Author URI: https://webbedrijf.nl
  * License: GPL2
