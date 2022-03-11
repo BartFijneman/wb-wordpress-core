@@ -119,7 +119,6 @@ class LoginController
             $response->set_status( 403 );
             return $response;
         }
-
     }
 
 

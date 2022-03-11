@@ -3,6 +3,7 @@
 namespace WbWordpressCore;
 
 use Carbon_Fields\Carbon_Fields;
+use WbWordpressCore\Crons\WpRocketCache;
 use WbWordpressCore\Http\V1\Controllers\LoginController;
 use WbWordpressCore\Login\Login;
 use WbWordpressCore\Page\Options;
@@ -26,6 +27,11 @@ class Plugin {
          * Register controller
          */
         LoginController::register();
+
+        /*
+         * Register cronjobs
+         */
+        WpRocketCache::register();
     }
 
 
