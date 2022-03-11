@@ -3,7 +3,7 @@
  * Plugin Name: Webbedrijf.nl core
  * Plugin URI: https://github.com/BartFijneman/wb-wordpress-core
  * Description: Integration for mijn.webbedrijf.nl
- * Version: 1.2.1
+ * Version: 1.2.2
  * Author: Webbedrijf.nl
  * Author URI: https://webbedrijf.nl
  * License: GPL2

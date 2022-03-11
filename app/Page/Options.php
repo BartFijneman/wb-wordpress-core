@@ -4,6 +4,7 @@ namespace WbWordpressCore\Page;
 
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
+use DateTimeZone;
 
 
 class Options
@@ -31,10 +32,22 @@ class Options
             if(carbon_get_theme_option('wb_core_wpr_clear') != 'none') {
 
                 $at = '02:00';
+                $day = 'sunday';
+
+                date_default_timezone_set('Europe/Amsterdam');
+
                 if( carbon_get_theme_option('wb_core_wpr_clear_at') != '' )
                     $at = carbon_get_theme_option('wb_core_wpr_clear_at');
 
-                wp_schedule_event(strtotime('tomorrow ' . $at), carbon_get_theme_option('wb_core_wpr_clear'), 'wb_core_wpr_clear_cron');
+                if( carbon_get_theme_option('wb_core_wpr_clear_at_day') != '' )
+                    $day = carbon_get_theme_option('wb_core_wpr_clear_at_day');
+
+                $time = strtotime('tomorrow ' . $at);
+
+                if(carbon_get_theme_option('wb_core_wpr_clear') == 'weekly')
+                    $time = strtotime('next ' . $day . ' ' . $at);
+
+                wp_schedule_event($time, carbon_get_theme_option('wb_core_wpr_clear'), 'wb_core_wpr_clear_cron');
             }
         }
     }
@@ -108,6 +121,22 @@ class Options
                         'daily' => __( 'Dagelijks' ),
                         'weekly' => __( 'Wekelijks' ),
                     ) ),
+
+                Field::make( 'select', 'wb_core_wpr_clear_at_day', __( 'Voorkeursdag' ) )
+                    ->add_options( array(
+                        'sunday' => __( 'Zondag' ),
+                        'monday' => __( 'Maandag' ),
+                        'tuesday' => __( 'Dinsdag' ),
+                        'wednesday' => __( 'Woensdag' ),
+                        'thursday' => __( 'Donderdag' ),
+                        'friday' => __( 'Vrijdag' ),
+                        'saturday' => __( 'Zaterdag' ),
+                    ) )
+                    ->set_conditional_logic([[
+                        'field' => 'wb_core_wpr_clear',
+                        'compare' => '=',
+                        'value' => 'weekly',
+                    ]]),
 
                 Field::make( 'time', 'wb_core_wpr_clear_at', __( 'Voorkeurstijdstip' ) )
                     ->set_input_format( 'H:i', 'H:i' )
