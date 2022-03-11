@@ -112,23 +112,24 @@ html .login #rememberme::before {
 }
 
 .login.wp-core-ui .language-switcher {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    position: absolute !important;
+    top: 20px !important;
+    right: 20px !important;
 }
 
 .login.wp-core-ui #language-switcher {
-    display: flex;
-    flex-direction: column;
+    display: flex !important;
+    flex-direction: column !important;
 }
 .login.wp-core-ui #language-switcher #language-switcher-locales {
-    margin-bottom: 10px;
-    padding: 5px 15px;
-    border-radius: 10px;
-    width: 100%;
+    margin-bottom: 10px !important;
+    padding: 5px 15px !important;
+    border-radius: 10px !important;
+    width: 100% !important;
 }
 .login.wp-core-ui #language-switcher .button {
     padding: 0 !important;
+    border: none  !important;
 }
 .login.wp-core-ui #language-switcher .dashicons-translation {
     display: none !important;
