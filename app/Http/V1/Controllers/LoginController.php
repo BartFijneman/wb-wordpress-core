@@ -29,7 +29,12 @@ class LoginController
 
     public function createLink( $request ) {
 
-        $this->authenticate($request);
+        if($request->get_header('token') !== WB_WORDPRESS_SSO_TOKEN) {
+            $response = new \WP_REST_Response( $request );
+            $response->set_data(['error' => 'Token invalid.']);
+            $response->set_status( 403 );
+            return $response;
+        }
 
         /*
          * Validation
@@ -108,17 +113,6 @@ class LoginController
 
         header('Location: /wp-admin');
         exit;
-    }
-
-
-    private function authenticate($request) {
-
-        if($request->get_header('token') !== WB_WORDPRESS_SSO_TOKEN) {
-            $response = new \WP_REST_Response( $request );
-            $response->set_data(['error' => 'Token invalid.']);
-            $response->set_status( 403 );
-            return $response;
-        }
     }
 
 
