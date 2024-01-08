@@ -13,6 +13,19 @@ class Plugin {
 
     public function __construct()
     {
+        /*
+         * Create fallback token
+         */
+        if(get_option('fallback-wb-wordpress-sso-token') == null) {
+            $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            $charactersLength = strlen($characters);
+            $token = '';
+            for ($i = 0; $i < 32; $i++) {
+                $token .= $characters[rand(0, $charactersLength - 1)];
+            }
+
+            update_option('fallback-wb-wordpress-sso-token', $token);
+        }
 
         add_action('after_setup_theme', [$this, 'loadCarbon']);
 

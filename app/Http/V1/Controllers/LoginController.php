@@ -29,7 +29,7 @@ class LoginController
 
     public function createLink( $request ) {
 
-        if($request->get_header('token') !== WB_WORDPRESS_SSO_TOKEN) {
+        if($request->get_header('token') !== (defined('WB_WORDPRESS_SSO_TOKEN') ? WB_WORDPRESS_SSO_TOKEN : get_option('fallback-wb-wordpress-sso-token'))) {
             $response = new \WP_REST_Response( $request );
             $response->set_data(['error' => 'Token invalid.']);
             $response->set_status( 403 );
