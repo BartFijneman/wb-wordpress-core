@@ -66,8 +66,8 @@ class Options
             ->add_tab('Login', [
                 Field::make('text', 'wb_sso_key', 'SSO sleutel')
                     ->set_attribute('maxLength', 255)
-                    ->set_default_value(defined('WB_WORDPRESS_SSO_TOKEN') ? WB_WORDPRESS_SSO_TOKEN : get_option('fallback-wb-wordpress-sso-token'))
-                    ->set_attribute('disabled', true),
+                    ->set_attribute('readOnly', 'true')
+                    ->set_default_value(defined('WB_WORDPRESS_SSO_TOKEN') ? WB_WORDPRESS_SSO_TOKEN : get_option('fallback-wb-wordpress-sso-token')),
 
                 Field::make('checkbox', 'wb_login_activate', 'Login styling actief')
                     ->set_option_value('yes'),
